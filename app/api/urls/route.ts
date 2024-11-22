@@ -119,25 +119,33 @@ export async function DELETE(request: Request) {
 
 export async function GET(request: Request) {
   try {
+    console.log('Test 1');
     const isDbGood = await checkDbConnection();
 
+    console.log('Test 2');
     if (!isDbGood) {
       return new Response(JSON.stringify({ error: 'Database temporrily not available' }), {
         status: 500,
       });
     }
 
+    console.log('Test 3');
     const referer = request.headers.get('referer');
 
+    console.log('Test 4');
     if (!referer || !referer.startsWith(process.env?.NEXT_PUBLIC_BASE_URL ?? '')) {
       return new Response(JSON.stringify({ error: 'Forbidden' }), {
         status: 403,
       });
     }
 
+    console.log('Test 5');
     const { searchParams } = new URL(request.url);
+
+    console.log('Test 6');
     const userId = searchParams.get('userId');
 
+    console.log('Test 7');
     if (!userId) {
       return NextResponse.json(
         { error: 'User ID is required' },
@@ -145,11 +153,13 @@ export async function GET(request: Request) {
       );
     }
 
+    console.log('Test 8');
     const urls = await prisma.uRL.findMany({
       where: { userId },
       orderBy: { createdAt: 'desc' },
     });
 
+    console.log('Test 9');
     return NextResponse.json(urls);
   } catch (err) {
     console.error(err);

@@ -6,6 +6,7 @@
     "dev": "next dev -p 9800",
     "build": "next build",
     "start": "next start",
+    "start:local": "next start -p 9900",
     "lint": "next lint",
     "postinstall": "prisma generate"
   },
