@@ -23,13 +23,13 @@ async function checkDbConnection() {
 export async function POST(request: Request) {
   try {
 
-    const isDbGood = await checkDbConnection();
+    // const isDbGood = await checkDbConnection();
 
-    if (!isDbGood) {
-      return new Response(JSON.stringify({ error: 'Database temporrily not available' }), {
-        status: 500,
-      });
-    }
+    // if (!isDbGood) {
+    //   return new Response(JSON.stringify({ error: 'Database temporrily not available' }), {
+    //     status: 500,
+    //   });
+    // }
 
     const referer = request.headers.get('referer');
 
