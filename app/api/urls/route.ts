@@ -120,14 +120,14 @@ export async function DELETE(request: Request) {
 export async function GET(request: Request) {
   try {
     console.log('Test 1');
-    const isDbGood = await checkDbConnection();
+    // const isDbGood = await checkDbConnection();
 
-    console.log('Test 2');
-    if (!isDbGood) {
-      return new Response(JSON.stringify({ error: 'Database temporrily not available' }), {
-        status: 500,
-      });
-    }
+    // console.log('Test 2');
+    // if (!isDbGood) {
+    //   return new Response(JSON.stringify({ error: 'Database temporrily not available' }), {
+    //     status: 500,
+    //   });
+    // }
 
     console.log('Test 3');
     const referer = request.headers.get('referer');
