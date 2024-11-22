@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'KingsURL - Simple URL Shortener',
+  title: 'KingsURL - URL Shortener for Royalty',
   description: 'Shorten your URLs and share them in a beautiful linktree format - by https://kingschat.online/user/ephraimd',
   icons: ['/favicon.ico']
 };
