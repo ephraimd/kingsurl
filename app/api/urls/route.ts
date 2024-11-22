@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid';
 import { z } from 'zod';
 
 export const dynamic = "force-dynamic";
+export const maxDuration = 59;
 
 const urlSchema = z.object({
   url: z.string().url(),
