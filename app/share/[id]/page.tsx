@@ -4,7 +4,7 @@ import { Crown, ExternalLink } from 'lucide-react';
 import useSWR from 'swr';
 import { URL } from '@prisma/client';
 
-// SWR fetcher function
+
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function SharePage({ params }: { params: { id: string } }) {
